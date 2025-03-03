@@ -1,7 +1,9 @@
+import { unstable_noStore as noStore } from 'next/cache';
 import React from 'react';
 
 // This is a Server Component (by default in 'app' directory)
 async function ServerSSRPage() {
+  noStore();
   const serverTimestamp = new Date().toISOString();
 
   return (
