@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/ssr-page*",  // Match requests to /ssr-page and any subpaths
+      "headers": {
+        "Cache-Control": "no-cache, must-revalidate"
+      }
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "index.html", // If you are using client-side routing, adjust this
+    "headers": {
+      "Cache-Control": "no-cache, must-revalidate" // For the initial document load
+    }
+  }
+}
